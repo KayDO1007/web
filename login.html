@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Thinh">
+        <meta name="description" content="This is a sample page">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function remember() {
+                if(typeof(Storage) !=="undefined") {
+                    if(document.getElementById("rem").check) {
+                        localStorage.setItem("username", document.getElementById("username").value);
+                        localStorage.setItem("password", document.getElementById("password").value);
+                        localStorage.setItem("rem", true);
+                    } 
+                    else {
+                        localStorage.clear();
+                    }
+
+                } else {
+                    document.getElementById("error").innerHTML="The web browser does not support web storage API."
+                }
+            }
+            function init() {
+                if(typeof(Storage) !=="undefined") {
+                    if(localStorage.getItem("rem")) {
+                        document.getElementById("username").value=localStorage.getItem("username");
+                        document.getElementById("password").value=localStorage.getItem("password"); 
+                        document.getElementById("rem").check=true;
+                    }
+                }  else {
+                    document.getElementById("error").innerHTML="The web browser does not support web storage API."
+                }
+            }
+        </script>
+        </head>
+
+        <body onload="init()">
+            <form method="post" action="">
+                <p>Username: <input id="username" name="username" value="" type="text"></p>
+                <p>Password: <input id="password" name="password" value="" type="password"></p>
+                <p>Remember Me: <input id="rem" type="checkbox" onchange="remember()"><span id="error"></span></p>
+                <p><input name="submit" type="submit"></p>
+            </form>
+        </body>
+        </html>

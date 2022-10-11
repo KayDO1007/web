@@ -1,0 +1,128 @@
+img {
+    height: 4em;
+    vertical-align: middle;
+    float: right;
+}
+
+h1 {
+    display: inline;
+}
+
+header {
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    border: solid gold;
+    padding: 0.5em 1em;
+    background-color: lightyellow;
+    margin: 0.5em 1em;
+    box-shadow: red 0.2em 0.2em;
+    transition: 2s;
+}
+nav li:hover {
+    width: 100px;
+    background-color: blue;
+}
+nav li a {
+    text-decoration: none;
+    transition: 2s;
+}
+nav li a:hover {
+    color: white;
+}
+div {
+    font-family: 'Courier New', 'Courier New', Courier, monospace;
+}
+
+span {
+    color: blue;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "main main aside"
+    "footer footer footer";
+    gap: 10px;
+    background-color: red;
+
+}
+.grid-container header {
+    grid-area: header;
+    background-color: white;
+}
+.grid-container nav {
+    grid-area: nav;
+    background-color: white;
+
+}
+.grid-container main {
+    grid-area: main;
+    background-color: white;
+}
+.grid-container aside {
+    grid-area: aside;
+    background-color: white;
+}
+.grid-container footer {
+    grid-area: footer;
+    background-color: white;
+}
+video {
+    display: block;
+    padding: 20px;
+    border: 20px solid red;
+    box-sizing: border-box;
+}
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 10px;
+    background-color: blue;
+}
+.grid-container-1 header {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: white;
+}
+.grid-container-1 nav {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: white;
+}
+.grid-container-1 main {
+    grid-row-start: 3;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: white;
+}
+.grid-container-1 aside {
+    grid-row-start: 3;
+    grid-row-end: 8;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: white;
+}
+.grid-container-1 footer {
+    grid-row: 8;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: white;
+}
+main {
+    background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=740&t=st=1662461825~exp=1662462425~hmac=08a031d853b9861a2e5b7523af6e814a1978b557640fa2eb9c7e8c79a67e055c");
+}
+nav {
+    background: linear-gradient(blue, white)
+}
+.bold {
+    font-weight: 900;
+}
