@@ -8,9 +8,8 @@
     <meta name="description" content="This is a sample page">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         //alert("This is online gambling website. You must be over 18 to access it!");
         //confirm("This is online gambling website. You must be over 18 to access it!")
@@ -133,12 +132,13 @@
                     $(this).toggle($(this).attr("title").toLowerCase().indexOf(value) > -1)
                 });
             });
-            $(".grid-container").addClass("container");
-            // $(".grid-container").addClass("row");
-            // $("main").addClass("col-sm-7");
-            // $("aside").addClass("col-4");
+            $(".grid-container").addClass("container-sm py-5 bg-info");
+            $(".grid-container").addClass("row");
+            $("main").addClass("col-7");
+            $("aside").addClass("col");
             $("nav li").addClass("btn btn-warning");
             $("nav").addClass("navbar navbar-expand-sm justify-content-center");
+            $("nav ul").addClass("nav flex-column")
             $("form").validate({
                 rules: {
                     email: {
@@ -153,6 +153,11 @@
                     }
                 }
             });
+            // $("form").addClass("form-group");
+            // $("form input, form textarea").addClass("form-control");
+          $("form input, form textarea").addClass("form-inline");
+          $("form").addClass("form-horizontal");
+          
         });
     </script>
     <noscript>This web browser does not support Javascript</noscript>
@@ -182,27 +187,31 @@
             </article>
             <div>
                 <form method="post" action="">
-                    <p>Your Name: <input id="name" name="name" value="" type="text" required><span
+                    <p><label>Your Name: </label><input id="name" name="name" value="" type="text" required><span
                             id="nameError"></span></p>
-                    <p>Your Email: <input id="email" name="email" value="" type="text"><span
+                    <p><label>Your Email: </label><input id="email" name="email" value="" type="text"><span
                             id="emailError"></span></p>
-                    <p>Your Age: <input id="age" name="age" value="" type="text" required pattern
+                    <p><label>Your Age: </label><input id="age" name="age" value="" type="text" required pattern
                             onfocusout="ageCheck()"><span id="ageError"></span>
                     </p>
-                    <p>Your Message:</p>
+                    <p><label>Your Message: </label></p>
                     <p><textarea name="message" cols="40" rows="10" required></textarea></p>
                     <p>Your location:</p>
                     <p id="longitude"></p>
                     <p id="latitude"></p>
-                    <p><input type="date" name="date"></p>
-                    <p><input type="submit" name="submit">
-                        <input type="reset" name="reset">
+                    <p><label></label><input type="date" name="date"></p>
+                    <p><label></label><button type="submit" name="submit">Submit</button>
+                        <button type="reset" name="reset">Reset</button>
                     </p>
                 </form>
             </div>
         </main>
         <aside>
+          <div class="input-group">
             <input type="text" name="search" id="search" placeholder="search videos">
+            <span class="input-group-text">Keywords</span>
+          </div>
+            
             <video width="300" height="200" controls title="Billions">
                 <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                 The web browser does not support mp4.
