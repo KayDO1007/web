@@ -63,6 +63,7 @@ span {
 .grid-container main {
     grid-area: main;
     background-color: white;
+  
 }
 .grid-container aside {
     grid-area: aside;
@@ -121,7 +122,12 @@ main {
     background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=740&t=st=1662461825~exp=1662462425~hmac=08a031d853b9861a2e5b7523af6e814a1978b557640fa2eb9c7e8c79a67e055c");
 }
 nav {
-    background: linear-gradient(blue, white)
+    background: linear-gradient(blue, white);
+    
+}
+footer {
+    text-align: center;
+    
 }
 .bold {
     font-weight: 900;
